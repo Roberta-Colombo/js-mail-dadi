@@ -1,4 +1,4 @@
-/* Chiedi all’utente la sua email,
+/* ESERCIZIO 1: Chiedi all’utente la sua email,
 controlla che sia nella lista di chi può accedere,
 stampa un messaggio appropriato sull’esito del controllo. 
 
@@ -41,5 +41,40 @@ const tryAccess = function(){
 
 btnAccess.addEventListener('click', tryAccess);
 
+
+/* ESERCIZIO 2: Generare un numero random da 1 a 6, sia per il giocatore sia per il computer.
+Stabilire il vincitore, in base a chi fa il punteggio più alto. 
+
+ALGORITMO:
+creare bottone, il quale premendolo genera 
+due numeri random (da 1 a 6);
+stabilire il numero più alto;
+Numero più alto = vincitore. */
+ 
+const playBtn = document.getElementById('play');
+
+// const randomNumbers = [''];
+
+const generateRandomNumber = function(){
+    const randomNumber = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
+    const randomNumberPC = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
+    const result = document.createElement('p');
+    container.append(result);
+    console.log(randomNumber);
+    console.log(randomNumberPC);
+
+    if(randomNumber > randomNumberPC){
+        result.append('Hai vinto!');
+    }
+
+    else if(randomNumberPC > randomNumber) {
+        result.append('Il PC ha vinto!');
+    }
+    else {
+        console.log("pareggio");
+    }
+}
+
+playBtn.addEventListener('click', generateRandomNumber);
 
 
