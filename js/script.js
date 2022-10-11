@@ -52,28 +52,29 @@ stabilire il numero più alto;
 Numero più alto = vincitore. */
  
 const playBtn = document.getElementById('play');
+const container2 = document.querySelector('.container2');
 
 const generateRandomNumber = function(){
     const randomNumber = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
     const randomNumberPC = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
     const result = document.createElement('p');
-    container.append(result);
+    container2.append(result);
     // console.log(randomNumber);
     // console.log(randomNumberPC);
     result.innerHTML = `
-    il tuo punteggio è ${randomNumber}<br> 
+    <br>il tuo punteggio è ${randomNumber}<br><br>
     il punteggio del PC è ${randomNumberPC}<br><br>
     `
-    
+
     if(randomNumber > randomNumberPC){
-        result.append('Hai vinto!');
+        result.innerHTML += "<strong>Hai vinto!</strong>";
     }
 
     else if(randomNumberPC > randomNumber) {
-        result.append('Il PC ha vinto!');
+        result.innerHTML += "<strong>Il PC ha vinto!<strong>";
     }
     else {
-        result.append("Pareggio!");
+        result.innerHTML += "<strong>Pareggio!</strong>";
     }
 }
 
