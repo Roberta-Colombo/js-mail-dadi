@@ -53,16 +53,18 @@ Numero più alto = vincitore. */
  
 const playBtn = document.getElementById('play');
 
-// const randomNumbers = [''];
-
 const generateRandomNumber = function(){
     const randomNumber = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
     const randomNumberPC = Math.floor(Math.random() * (6 - 1 + 1) ) + 1;
     const result = document.createElement('p');
     container.append(result);
-    console.log(randomNumber);
-    console.log(randomNumberPC);
-
+    // console.log(randomNumber);
+    // console.log(randomNumberPC);
+    result.innerHTML = `
+    il tuo punteggio è ${randomNumber}<br> 
+    il punteggio del PC è ${randomNumberPC}<br><br>
+    `
+    
     if(randomNumber > randomNumberPC){
         result.append('Hai vinto!');
     }
@@ -71,7 +73,7 @@ const generateRandomNumber = function(){
         result.append('Il PC ha vinto!');
     }
     else {
-        console.log("pareggio");
+        result.append("Pareggio!");
     }
 }
 
